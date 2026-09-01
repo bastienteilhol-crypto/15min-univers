@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090b13">
+<title>15 MIN — UNIVERS</title>
+<style>
+:root{--bg:#080a11;--card:#111521;--card2:#151a29;--text:#f5f6fb;--muted:#9ca3b7;--purple:#8b5cf6;--purple2:#a78bfa;--green:#62d49b;--gold:#f4c96b;--line:#242a3a}
+*{box-sizing:border-box} html{background:var(--bg)}
+body{margin:0;background:radial-gradient(circle at 80% -10%,#211447 0,transparent 35%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;min-height:100vh}
+button{font:inherit;color:inherit;border:0}
+.app{max-width:520px;margin:auto;min-height:100vh;padding-bottom:86px}
+header{padding:18px 20px 8px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:750;font-size:16px}.logo span{color:var(--purple2)}
+.iconbtn{background:#171b29;border:1px solid var(--line);width:38px;height:38px;border-radius:12px}
+main{padding:8px 20px}
+.eyebrow{font-size:12px;color:var(--purple2);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:31px;line-height:1.08;margin:8px 0 12px;letter-spacing:-.03em}
+h2{font-size:21px;line-height:1.2;margin:0 0 10px}
+p{color:#d5d8e2;line-height:1.62;font-size:16px}
+.muted{color:var(--muted)}
+.hero{margin-top:12px;border:1px solid #30254f;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#171126,#101522);box-shadow:0 16px 50px #0007}
+.heroimg{height:190px;background:
+radial-gradient(circle at 58% 48%,#d9c7ff 0 2%,#8b5cf6 3%,transparent 11%),
+radial-gradient(circle at 58% 48%,transparent 0 16%,#6d43c9 17% 18%,transparent 19%),
+radial-gradient(circle at 58% 48%,transparent 0 29%,#33205f 30% 31%,transparent 32%),
+radial-gradient(circle at 58% 48%,transparent 0 43%,#251b45 44% 45%,transparent 46%),
+radial-gradient(circle at 20% 30%,#fff 0 1px,transparent 2px),
+radial-gradient(circle at 75% 20%,#fff 0 1px,transparent 2px),
+radial-gradient(circle at 82% 72%,#fff 0 1px,transparent 2px),
+linear-gradient(135deg,#080a12,#17122c)}
+.heroimg:after{content:"";display:block;width:330px;height:85px;margin:52px auto 0;border-radius:50%;border:2px solid #8b5cf655;transform:rotate(-18deg);box-shadow:0 0 25px #8b5cf633}
+.hero-body{padding:20px}.badge{display:inline-block;padding:6px 9px;border-radius:9px;background:#6d38c855;color:#cdbdff;font-size:11px;font-weight:700}
+.meta{font-size:12px;color:var(--muted);margin:10px 0 18px}
+.primary{width:100%;padding:14px;border-radius:13px;background:linear-gradient(90deg,#7340d8,#8b5cf6);font-weight:700;cursor:pointer}
+.section{margin-top:28px}
+.progress-row{display:flex;justify-content:space-between;font-size:13px;margin:12px 0 7px}
+.bar{height:7px;background:#252a39;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--purple);border-radius:99px}
+.streak{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:17px;padding:16px}
+.days{display:flex;justify-content:space-between;margin-top:12px}.day{text-align:center;font-size:10px;color:var(--muted)}.dot{margin-top:6px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#202638}.done{background:#6d43d7;color:white}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:72px;background:#0d1019ed;border-top:1px solid var(--line);backdrop-filter:blur(18px);display:flex;justify-content:space-around;padding-top:9px;padding-bottom:env(safe-area-inset-bottom)}
+.nav button{background:none;color:var(--muted);font-size:10px;display:flex;flex-direction:column;gap:4px;align-items:center}.nav button.active{color:white}.nav b{font-size:20px;line-height:20px}
+.view{display:none}.view.active{display:block}
+.chips{display:flex;gap:8px;overflow:auto;padding:6px 0 14px}.chip{white-space:nowrap;background:#151a27;border:1px solid var(--line);border-radius:99px;padding:8px 12px;font-size:12px}.chip.active{background:#713fd0;border-color:#8b5cf6}
+.lesson{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);cursor:pointer}.num{width:32px;height:32px;border:2px solid #555b70;border-radius:50%;display:grid;place-items:center;flex:none;color:#c7cada}.lesson.done .num{background:#5cbd8a;border-color:#5cbd8a;color:#08110d}.lesson.locked{opacity:.42}.lesson-title{font-weight:650;font-size:15px}.lesson-time{font-size:11px;color:var(--muted);margin-top:5px}
+.reader{padding-bottom:20px}.reader-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.back{background:none;color:#cbd0df}.reader .heroimg{height:210px;border-radius:18px;margin-bottom:20px}.reader h1{font-size:30px}.label{color:var(--purple2);font-size:12px;font-weight:700;margin-top:26px}.fact{border:1px solid #345443;background:#122019;border-radius:15px;padding:15px;margin:16px 0}.question{border:1px solid #55441e;background:#1c1810;border-radius:15px;padding:15px;margin:16px 0}.deep{border:1px solid #3b3159;background:#151126;border-radius:15px;padding:15px;margin:16px 0}.finish{margin-top:25px}.fav{background:#171b29;border:1px solid var(--line);border-radius:12px;padding:9px 11px}
+.smallcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="logo">🪐 <span>15 MIN</span> — UNIVERS</div><button class="iconbtn" onclick="showView('profile')">🔥 <span id="streakNum">0</span></button></header>
+
+<main>
+<section id="home" class="view active">
+  <div class="eyebrow">Votre capsule du jour</div>
+  <h1>Une petite dose d’Univers.</h1>
+  <div class="hero">
+    <div class="heroimg"></div>
+    <div class="hero-body">
+      <span class="badge">NIVEAU 1/5 · AUJOURD’HUI</span>
+      <h2 style="margin-top:13px">Pourquoi l’Univers est-il en expansion ?</h2>
+      <div class="meta">14 min de lecture · 2 350 mots · ⭐ 4,8</div>
+      <button class="primary" onclick="openLesson(5)">▶ Commencer la lecture</button>
+    </div>
+  </div>
+  <div class="section"><div style="display:flex;justify-content:space-between"><b>Votre progression</b><span class="muted" style="font-size:12px">Voir tout</span></div>
+    <div class="progress-row"><span>🌌 Cosmologie</span><span>5/12</span></div><div class="bar"><i style="width:42%"></i></div>
+    <div class="progress-row"><span>⚛️ Physique</span><span>0/12</span></div><div class="bar"><i style="width:0%"></i></div>
+    <div class="progress-row"><span>🕳️ Trous noirs</span><span>0/8</span></div><div class="bar"><i style="width:0%"></i></div>
+  </div>
+  <div class="streak"><b>Votre série 🔥</b><div class="muted" style="font-size:12px;margin-top:4px">L’objectif : 15 minutes de curiosité par jour.</div><div class="days" id="days"></div></div>
+</section>
+
+<section id="paths" class="view">
+  <div class="eyebrow">Parcours</div><h1>Votre voyage commence ici.</h1>
+  <div class="chips"><button class="chip active">Tous</button><button class="chip">Cosmologie</button><button class="chip">Relativité</button><button class="chip">Trous noirs</button></div>
+  <div id="lessonList"></div>
+</section>
+
+<section id="library" class="view">
+  <div class="eyebrow">Bibliothèque</div><h1>À lire quand vous voulez.</h1>
+  <div class="smallcard"><b>🔖 Vos favoris</b><p class="muted" style="font-size:13px">Les articles que vous avez mis de côté apparaîtront ici.</p></div>
+  <div class="smallcard"><b>🧠 Pour les curieux</b><p class="muted" style="font-size:13px">Des approfondissements de 5 minutes pour aller au-delà de la capsule.</p></div>
+</section>
+
+<section id="favorites" class="view"><div class="eyebrow">Favoris</div><h1>Vos découvertes.</h1><div id="favList"></div></section>
+<section id="profile" class="view"><div class="eyebrow">Votre profil</div><h1>Continuez votre voyage.</h1><div class="smallcard"><b>🔥 Série actuelle</b><h2 id="profileStreak">0 jour</h2><p class="muted">La régularité compte plus que la vitesse.</p></div><div class="smallcard"><b>🎯 Philosophie</b><p>Comprendre d’abord. Approfondir ensuite. Ne jamais confondre ce qu’on sait avec ce qu’on imagine.</p></div></section>
+
+<section id="reader" class="view reader">
+  <div class="reader-top"><button class="back" onclick="showView('paths')">← Parcours</button><button class="fav" id="favBtn" onclick="toggleFav()">♡</button></div>
+  <div class="eyebrow" id="rEyebrow"></div><h1 id="rTitle"></h1><div class="meta" id="rMeta"></div>
+  <div class="heroimg"></div><div id="rBody"></div>
+  <button class="primary finish" onclick="completeLesson()">✓ Terminer la capsule</button>
+</section>
+</main>
+
+<nav class="nav">
+<button class="active" data-view="home" onclick="showView('home')"><b>⌂</b>Accueil</button>
+<button data-view="paths" onclick="showView('paths')"><b>✦</b>Parcours</button>
+<button data-view="library" onclick="showView('library')"><b>▤</b>Bibliothèque</button>
+<button data-view="favorites" onclick="showView('favorites')"><b>♡</b>Favoris</button>
+</nav>
+</div>
+
+<script>
+const lessons=[
+{title:"De quoi est fait l’Univers ?",time:"11 min",cat:"Cosmologie",body:[["1. L’idée intuitive","Imagine une carte immense, remplie de galaxies. La première surprise est que presque tout ce que nous voyons — étoiles, planètes, gaz, poussières — ne représente qu’une petite partie du contenu de l’Univers."],["2. On va un peu plus loin","Les observations cosmologiques indiquent que la matière ordinaire ne constitue qu’une fraction du budget cosmique. Une autre composante, appelée matière noire, semble graviter sans émettre de lumière. Et une troisième, l’énergie noire, est associée à l’accélération de l’expansion cosmique."],["3. Le truc surprenant","Nous ne connaissons donc pas encore la nature microscopique de la plus grande partie de l’Univers. La cosmologie est une science étonnante : nous mesurons très précisément certains effets, tout en ignorant encore ce qui les produit au niveau fondamental."]]},
+
+{title:"Comment sait-on ce qu’il y a très loin ?",time:"12 min",cat:"Astronomie",body:[["1. Regarder loin, c’est regarder dans le passé","La lumière ne se déplace pas instantanément. Quand une galaxie est à des millions d’années-lumière, sa lumière a voyagé pendant des millions d’années avant d’arriver jusqu’à nous."],["2. Une machine à remonter le temps","Un télescope est donc aussi une machine à regarder le passé. Plus il collecte de lumière provenant d’objets lointains, plus il nous montre des époques anciennes de l’Univers."],["3. Ce que cela change","Les astronomes peuvent comparer des galaxies à différents âges et reconstruire l’évolution cosmique."]]},
+
+{title:"Pourquoi regarder loin, c’est regarder dans le passé ?",time:"13 min",cat:"Physique",body:[["1. Une vitesse finie","La lumière file extrêmement vite, mais sa vitesse est finie : environ 300 000 kilomètres par seconde dans le vide."],["2. Une conséquence simple","Si une étoile se trouve à 1 000 années-lumière, l’image que nous recevons aujourd’hui correspond à son état d’il y a environ 1 000 ans."],["3. Le vertige","Observer l’Univers, c’est donc observer une collection d’instants différents. Il n’existe pas une photographie unique de l’Univers entier prise au même moment."]]},
+
+{title:"Qu’est-ce qu’une année-lumière ?",time:"10 min",cat:"Astronomie",body:[["1. Une distance, pas un temps","Une année-lumière est la distance parcourue par la lumière en une année. Cela représente environ 9 460 milliards de kilomètres."],["2. Pourquoi cette unité ?","Les distances astronomiques deviennent vite absurdes en kilomètres. L’année-lumière donne immédiatement une idée de l’échelle."],["3. À retenir","Dire qu’une galaxie est à 10 millions d’années-lumière signifie aussi que nous la voyons telle qu’elle était il y a environ 10 millions d’années."]]},
+
+{title:"Comment naissent les étoiles ?",time:"13 min",cat:"Étoiles",body:[["1. Tout commence dans un nuage","Les étoiles naissent dans de vastes régions froides de gaz et de poussière. Sous l’effet de la gravité, certaines zones deviennent progressivement plus denses."],["2. La gravité prend le dessus","En se contractant, le nuage transforme son énergie gravitationnelle en chaleur. Au centre se forme une protoétoile."],["3. L’allumage","Lorsque la température et la pression deviennent suffisantes, des réactions de fusion nucléaire commencent. Une étoile vient de naître."]]},
+
+{title:"Pourquoi l’Univers est-il en expansion ?",time:"14 min",cat:"Cosmologie",body:[["1. L’idée intuitive","Imagine des points dessinés sur un ballon que l’on gonfle. Les points ne bougent pas les uns par rapport aux autres, mais la distance entre eux augmente parce que la surface elle-même s’étire."],["2. Ce que nous observons","À grande échelle, les galaxies lointaines présentent un décalage vers le rouge. Plus une galaxie est lointaine, plus son éloignement apparent est important. C’est l’une des grandes observations qui ont conduit à notre description d’un Univers en expansion."],["3. Le truc surprenant","L’expansion n’est pas une explosion depuis un point situé quelque part dans l’espace. Dans le modèle cosmologique standard, c’est l’espace lui-même dont les distances caractéristiques évoluent."],["4. Ce que les scientifiques savent","L’expansion cosmique est solidement établie par plusieurs familles d’observations. Son rythme actuel peut être mesuré, même si certaines tensions entre méthodes de mesure restent un sujet actif de recherche."],["5. Pour les curieux","Le prochain chapitre naturel est le Big Bang : non pas une explosion dans un espace vide, mais une histoire de l’Univers lorsqu’il était beaucoup plus chaud, dense et jeune."]]},
+
+{title:"Le Big Bang était-il une explosion ?",time:"14 min",cat:"Cosmologie",body:[["1. Une image trompeuse","Le mot « Big Bang » peut faire penser à une bombe qui explose dans un espace déjà présent. Ce n’est pas ce que décrit le modèle cosmologique."],["2. Une histoire d’expansion","Si l’on remonte le film de l’Univers, on trouve un état extrêmement chaud et dense. Les distances entre les régions de l’Univers étaient alors beaucoup plus petites."],["3. Le fond diffus cosmologique","Environ 380 000 ans après les premières phases chaudes, la lumière a pu voyager librement. Cette lumière refroidie est aujourd’hui observée sous forme d’un rayonnement micro-onde qui remplit le ciel."],["4. La limite de nos mots","Remonter jusqu’à l’extrême commencement demande une théorie de la gravitation quantique que nous ne possédons pas encore de façon complète. Il faut donc être prudent avec les phrases comme « avant le Big Bang »."]]},
+
+{title:"Le temps est-il vraiment relatif ?",time:"15 min",cat:"Relativité",body:[["1. Le temps n’est pas universel","Dans la relativité d’Einstein, deux observateurs en mouvement relatif peuvent mesurer des durées différentes entre les mêmes événements."],["2. Et la gravité ?","La gravité influence également l’écoulement du temps : une horloge placée dans un champ gravitationnel plus intense accumule légèrement moins de temps qu’une horloge située plus loin."],["3. Ce n’est pas qu’une idée","Ces effets sont mesurés expérimentalement et doivent être pris en compte dans des technologies modernes comme les systèmes de navigation par satellite."]]},
+
+{title:"Que se passe-t-il près d’un trou noir ?",time:"15 min",cat:"Trous noirs",body:[["1. L’horizon","Un trou noir possède une région autour de lui appelée horizon des événements. Une fois franchi, aucun signal ne peut revenir vers l’extérieur."],["2. Pour un observateur lointain","La lumière émise très près de l’horizon est fortement décalée vers le rouge et devient de plus en plus difficile à recevoir."],["3. Une idée à ne pas confondre","Un trou noir n’est pas un aspirateur cosmique qui attire tout à distance. Si le Soleil était remplacé par un trou noir de même masse, les orbites des planètes resteraient, en première approximation, les mêmes."]]},
+
+{title:"Pourquoi la lumière ne peut-elle pas aller plus vite ?",time:"15 min",cat:"Relativité",body:[["1. Une limite de la structure de l’espace-temps","La vitesse de la lumière dans le vide n’est pas seulement une vitesse parmi d’autres. Elle intervient comme une constante fondamentale dans la structure de la relativité."],["2. Plus on accélère","Pour un objet massif, atteindre cette vitesse demanderait une énergie qui diverge dans la description relativiste. On peut s’en approcher, mais pas l’atteindre par une accélération ordinaire."],["3. Le vrai mystère","La question « pourquoi cette vitesse a-t-elle cette valeur ? » nous mène jusqu’aux fondations de la physique et dépasse ce que la relativité spéciale explique à elle seule."]]}
+];
+
+let current=0;
+let completed=JSON.parse(localStorage.getItem('completed15')||'[]');
+let favorites=JSON.parse(localStorage.getItem('favorites15')||'[]');
+let streak=Number(localStorage.getItem('streak15')||0);
+
+function showView(id){
+ document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));
+ if(id==='paths') renderLessons();
+ if(id==='favorites') renderFavs();
+ window.scrollTo(0,0);
+}
+function renderLessons(){
+ const list=document.getElementById('lessonList'); list.innerHTML='';
+ lessons.forEach((l,i)=>{
+   const locked=i>completed.length+2;
+   const d=document.createElement('div'); d.className='lesson '+(completed.includes(i)?'done ':'')+(locked?'locked':'');
+   d.innerHTML=`<div class="num">${completed.includes(i)?'✓':i+1}</div><div><div class="lesson-title">${l.title}</div><div class="lesson-time">${l.time} · ${l.cat}${locked?' · 🔒':''}</div></div>`;
+   if(!locked)d.onclick=()=>openLesson(i);
+   list.appendChild(d);
+ });
+}
+function openLesson(i){
+ current=i; const l=lessons[i];
+ document.getElementById('rEyebrow').textContent=`${l.cat} · CAPSULE ${i+1}/10`;
+ document.getElementById('rTitle').textContent=l.title;
+ document.getElementById('rMeta').textContent=`${l.time} de lecture · Niveau ${i<6?1:i<8?2:3}/5`;
+ document.getElementById('favBtn').textContent=favorites.includes(i)?'♥':'♡';
+ let html='';
+ l.body.forEach((s,n)=>{
+   const cls=n===3?'fact':n===4?'deep':'';
+   html+=`<div class="${cls}"><div class="label">${s[0]}</div><p>${s[1]}</p></div>`;
+ });
+ document.getElementById('rBody').innerHTML=html;
+ showView('reader');
+}
+function completeLesson(){
+ if(!completed.includes(current)){completed.push(current);localStorage.setItem('completed15',JSON.stringify(completed));}
+ const today=new Date().toDateString(), last=localStorage.getItem('lastRead15');
+ if(last!==today){streak++;localStorage.setItem('streak15',streak);localStorage.setItem('lastRead15',today);}
+ updateStreak(); alert('Capsule terminée ✨ À demain pour la suite.');
+ showView('paths');
+}
+function toggleFav(){
+ if(favorites.includes(current))favorites=favorites.filter(x=>x!==current);else favorites.push(current);
+ localStorage.setItem('favorites15',JSON.stringify(favorites));document.getElementById('favBtn').textContent=favorites.includes(current)?'♥':'♡';
+}
+function renderFavs(){
+ const el=document.getElementById('favList');
+ if(!favorites.length){el.innerHTML='<div class="smallcard"><p class="muted">Aucun favori pour le moment. Appuyez sur ♡ pendant une lecture pour en garder une trace.</p></div>';return}
+ el.innerHTML=favorites.map(i=>`<div class="lesson" onclick="openLesson(${i})"><div class="num">♡</div><div><div class="lesson-title">${lessons[i].title}</div><div class="lesson-time">${lessons[i].time} · ${lessons[i].cat}</div></div></div>`).join('');
+}
+function updateStreak(){
+ document.getElementById('streakNum').textContent=streak;
+ document.getElementById('profileStreak').textContent=streak+' '+(streak>1?'jours':'jour');
+ const names=['L','M','M','J','V','S','D'];document.getElementById('days').innerHTML=names.map((n,i)=>`<div class="day">${n}<div class="dot ${i<Math.min(streak,7)?'done':''}">${i<Math.min(streak,7)?'✓':''}</div></div>`).join('');
+}
+updateStreak(); renderLessons();
+</script>
+</body>
+</html>
